@@ -1,12 +1,7 @@
-import time
 import pytest
 
 from ..tests.fixtures import *
-from ..common.constants import *
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
 
 ID_ITEM = 4
 URL_CARD = f"https://www.saucedemo.com/inventory-item.html?id={ID_ITEM}"

@@ -32,6 +32,10 @@ def auth(login):
 
 @pytest.fixture()
 def add_item_to_cart(firefox_driver):
-    btn_item_elem = WebDriverWait.until(EC.element_to_be_clickable(BTN_ADD_TO_CART))
+    wait = WebDriverWait(firefox_driver, 10)
+    btn_item_elem = wait.until(EC.element_to_be_clickable(BTN_ADD_TO_CART))
     btn_item_elem.click()
-    yield btn_item_elem
+
+    btn_cart_elem = wait.until(EC.element_to_be_clickable(BTN_CART))
+    btn_cart_elem.click()
+
