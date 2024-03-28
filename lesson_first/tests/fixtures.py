@@ -38,4 +38,3 @@ def add_item_to_cart(firefox_driver):
 
     btn_cart_elem = wait.until(EC.element_to_be_clickable(BTN_CART))
     btn_cart_elem.click()
-
