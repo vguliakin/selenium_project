@@ -1,7 +1,11 @@
-from ..src.page import BasePage
+from ..common.page import BasePage
 
 
 class LoginPage(BasePage):
+
+    USR_FIELD = ('xpath', "//input[@data-test='username']")
+    PASS_FIELD = ('xpath', "//input[@data-test='password']")
+
 
     def enter_username(self, elem, username):
         self.driver.find_element(*elem).send_keys(username)
@@ -14,3 +18,5 @@ class LoginPage(BasePage):
 
     def verify_successful_login(self, url):
         return self.driver.current_url == url
+
+
